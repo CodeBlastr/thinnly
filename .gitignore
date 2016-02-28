@@ -1,0 +1,18 @@
+
+
+# CakePHP 3
+
+/vendor/*
+/config/app.php
+/tmp/*
+/logs/*
+
+# IDE
+
+.idea
+.DS_Store
+.editorconfig
+
+# Composer
+
+composer.lock
