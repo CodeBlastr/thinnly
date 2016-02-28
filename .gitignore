@@ -8,3 +8,7 @@
 # PHPStorm
 
 .idea
+
+# Composer
+
+composer.lock
