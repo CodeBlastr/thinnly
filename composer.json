@@ -3,6 +3,12 @@
     "description": "test app, to test codeblastr/framework RESTful-ness",
     "type": "project",
     "license": "GPL Version 3",
+    "authors": [
+        {
+            "name": "CodeBlastr",
+            "email": "github@razorit.com"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "cakephp/cakephp": "~3.2",
