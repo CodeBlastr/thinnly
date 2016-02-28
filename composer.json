@@ -1,0 +1,15 @@
+{
+    "name": "codeblastr/thinnly",
+    "description": "test app, to test codeblastr/framework RESTful-ness",
+    "require": {
+        "cakephp/cakephp": "~3.0"
+    },
+    "license": "GPL Version 3",
+    "authors": [
+        {
+            "name": "CodeBlastr",
+            "email": "github@razorit.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
