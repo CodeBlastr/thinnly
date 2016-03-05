@@ -65,6 +65,7 @@ use Cake\Utility\Security;
 try {
     Configure::config('default', new PhpConfig());
     Configure::load('app', 'default', false);
+    Configure::load('apis');
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }
@@ -182,6 +183,7 @@ Request::addDetector('tablet', function ($request) {
 
 Plugin::load('Migrations');
 Plugin::load('WyriHaximus/TwigView', ['bootstrap' => true]);
+Plugin::load('Dashboard', ['bootstrap' => false, 'routes' => true]);
 
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system
@@ -211,3 +213,4 @@ Type::build('date')
 Type::build('datetime')
     ->useImmutable()
     ->useLocaleParser();
+
