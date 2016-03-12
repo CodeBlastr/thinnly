@@ -1,0 +1,42 @@
+{
+    "wholsalify": {
+        "host": "wholesale360.localhost:8080",
+        "_____scheme": "httpsdfsdafsd",
+        "_____auth": {
+            "type": "basic",
+            "username": "admin",
+            "password": "Test123"
+        },
+        "proxy": {
+            "_____username": "not-needed",
+            "_____password": "non-needed",
+            "proxy": "127.0.0.1:8080"
+        },
+        "headers": {
+            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3NDhjOWY0ZC1kYmY3LTRmMzgtODYyZi03ZTViMGE5OTBjNzkiLCJleHAiOjE0NTgyNzMyODd9.BelqElDZILatGypDVqw4Hh6EFZj5qMt2LzNBDftwsNk"
+        },
+        "_____ssl_verify_peer": true,
+        "_____ssl_verify_depth": true,
+        "_____ssl_verify_host": true
+    },
+    "wholesale360": {
+        "host": "wholesale360.localhost:8080",
+        "_____scheme": "https",
+        "auth": {
+            "type": "basic",
+            "username": "mark",
+            "password": "testing"
+        },
+        "proxy": {
+            "username": "mark",
+            "password": "testing",
+            "proxy": "127.0.0.1:8080"
+        },
+        "_____ssl_verify_peer": true,
+        "_____ssl_verify_depth": true,
+        "_____ssl_verify_host": true
+    },
+    "_____api-2": {
+        "does not exist yet": "nothing"
+    }
+}

@@ -2,6 +2,9 @@
 namespace Dashboard\Controller;
 
 use Dashboard\Controller\AppController;
+
+use Dashboard\Model\Table\CustomersTable;
+
 use Cake\Network\Http\Client;
 use Cake\Core\Configure;
 
@@ -16,7 +19,7 @@ class ShopController extends AppController
     public function initialize()
     {
         // configuration set in ROOT/config/apis.php
-        $this->Http = new Client(Configure::read('wholesale360'));
+        $this->Http = new Client(Configure::read('wholsalify'));
     }
 
     /**
@@ -26,7 +29,10 @@ class ShopController extends AppController
      */
     public function index()
     {
-        debug($this->Http->get('/cocktails.json'));
+
+        //debug(Configure::append('apis', 'json', ['wholsalify._____scheme' => 'httpsdfsdafsd']));
+
+        debug($this->Http->get('/api/users/users/customers.json'));
         exit;
         $shop = $this->paginate($this->Shop);
 

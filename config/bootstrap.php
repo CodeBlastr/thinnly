@@ -1,4 +1,15 @@
 <?php
+
+$domains['asdf.localhost:8080'] = 'example.com';
+
+if (!empty($domains[$_SERVER['HTTP_HOST']])) {
+    if (!defined('SITE_DIR')) {
+        // this is the site combined local and remote sites directory
+        define('SITE_DIR', 'sites/' . $domains[$_SERVER['HTTP_HOST']]);
+    }
+}
+
+
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -17,7 +28,7 @@
  * Configure paths required to find CakePHP + general filepath
  * constants
  */
-require __DIR__ . '/paths.php';
+require __DIR__ . '/paths.php';https://www.google.com/search?q=horsehair+ceramics&espv=2&biw=1430&bih=798&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwjTw8f7hbfLAhWqyIMKHb6wBl0QsAQIHg&dpr=2
 
 // Use composer to load the autoloader.
 require ROOT . DS . 'vendor' . DS . 'autoload.php';
@@ -43,6 +54,7 @@ use Cake\Console\ConsoleErrorHandler;
 use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Core\Configure\Engine\PhpConfig;
+use Cake\Core\Configure\Engine\JsonConfig;
 use Cake\Core\Plugin;
 use Cake\Database\Type;
 use Cake\Datasource\ConnectionManager;
@@ -64,8 +76,9 @@ use Cake\Utility\Security;
  */
 try {
     Configure::config('default', new PhpConfig());
+    Configure::config('json', new JsonConfig());
     Configure::load('app', 'default', false);
-    Configure::load('apis');
+    Configure::load('apis', 'json');
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }
@@ -184,6 +197,7 @@ Request::addDetector('tablet', function ($request) {
 Plugin::load('Migrations');
 Plugin::load('WyriHaximus/TwigView', ['bootstrap' => true]);
 Plugin::load('Dashboard', ['bootstrap' => false, 'routes' => true]);
+Plugin::load('Wholsalify', ['autoload' => true]);
 
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system
